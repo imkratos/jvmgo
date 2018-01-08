@@ -10,7 +10,7 @@ import (
 func main() {
 	cmd := parseCmd()
 	if cmd.versionFlag {
-		fmt.Println("version 0.0.1")
+		fmt.Println("version 0.0.1.1")
 	} else if cmd.helpFlag || cmd.class == "" {
 		printUsage()
 	} else {
