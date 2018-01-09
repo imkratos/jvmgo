@@ -9,7 +9,7 @@ type ConstantStringInfo struct {
 
 func (self *ConstantStringInfo) readInfo(reader *ClassReader) {
 	self.stringIndex = reader.readUint16()
-	fmt.Printf("aaa-------- %s",self.stringIndex)
+	fmt.Printf("aaa-------- %s", self.stringIndex)
 }
 
 func (self *ConstantStringInfo) String() string {
