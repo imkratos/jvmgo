@@ -24,11 +24,15 @@ func (self *Thread) PushFrame(frame *Frame) {
 	self.stack.push(frame)
 
 }
-func (self *Thread) PopFrame(frame *Frame) {
+func (self *Thread) PopFrame() *Frame {
 	self.stack.pop()
 
 }
 func (self *Thread) CurrentFrame(frame *Frame) {
 	self.stack.top()
 
+}
+
+func (self *Thread) NewFrame(maxLocals, maxStack uint) *Frame {
+	return newFrame(self, maxLocals, maxStack)
 }
