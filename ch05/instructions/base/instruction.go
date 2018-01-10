@@ -1,6 +1,6 @@
 package base
 
-import "github.com/imkratos/jvmgo/ch04/rtda"
+import "github.com/imkratos/jvmgo/ch05/rtda"
 
 type Instruction interface {
 	FetchOperands(reader *BytecodeReader)
