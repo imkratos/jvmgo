@@ -32,10 +32,11 @@ func loop(thread *rtda.Thread, bytecode []byte) {
 
 		reader.Reset(bytecode, pc)
 		opcode := reader.ReadUint8()
+		fmt.Printf("opcode: %v: \n",opcode)
 		inst := instructions.NewInstruction(opcode)
 		inst.FetchOperands(reader)
 
-		fmt.Printf("pc:%2d inst:%T %v\n", pc, inst, inst)
+		fmt.Printf("pc:%2d inst:%T %v %v\n", pc, inst, inst,frame)
 		inst.Execute(frame)
 	}
 

@@ -2,6 +2,7 @@ package rtda
 
 import (
 	"math"
+	"fmt"
 )
 
 type OperandStack struct {
@@ -21,6 +22,7 @@ func NewOperandStack(maxStack uint) *OperandStack {
 }
 
 func (self *OperandStack) PushInt(val int32) {
+	fmt.Printf("------------- %s ---------\n",self.size)
 	self.slots[self.size].num = val
 	self.size++
 
