@@ -201,7 +201,7 @@ func NewInstruction(opcode byte) base.Instruction {
 		return dconst_1
 	case 0x10:
 		return &BIPUSH{}
-	//case 0x11:
+		//case 0x11:
 		//return &SIPUSH{}
 		// case 0x12:
 		// 	return &LDC{}
