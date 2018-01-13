@@ -4,6 +4,7 @@ import (
 	"github.com/imkratos/jvmgo/ch05/instructions/base"
 	"github.com/imkratos/jvmgo/ch05/rtda"
 )
+
 // Store reference into local variable
 type ASTORE struct{ base.Index8Instruction }
 

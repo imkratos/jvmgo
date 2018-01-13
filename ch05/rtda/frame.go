@@ -13,7 +13,7 @@ func newFrame(thread *Thread, maxLocals, maxStack uint) *Frame {
 	return &Frame{
 		thread:       thread,
 		localVars:    newLocalVars(maxLocals),
-		operandStack: NewOperandStack(maxStack),
+		operandStack: newOperandStack(maxStack),
 	}
 
 }

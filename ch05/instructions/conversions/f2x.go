@@ -4,6 +4,7 @@ import (
 	"github.com/imkratos/jvmgo/ch05/instructions/base"
 	"github.com/imkratos/jvmgo/ch05/rtda"
 )
+
 // Convert float to double
 type F2D struct{ base.NoOperandsInstruction }
 

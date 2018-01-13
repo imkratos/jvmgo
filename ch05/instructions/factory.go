@@ -1,8 +1,8 @@
 package instructions
 
 import (
-	"github.com/imkratos/jvmgo/ch05/instructions/base"
 	"fmt"
+	"github.com/imkratos/jvmgo/ch05/instructions/base"
 )
 import . "github.com/imkratos/jvmgo/ch05/instructions/constants"
 import . "github.com/imkratos/jvmgo/ch05/instructions/comparisons"

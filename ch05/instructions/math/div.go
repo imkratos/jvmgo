@@ -4,6 +4,7 @@ import (
 	"github.com/imkratos/jvmgo/ch05/instructions/base"
 	"github.com/imkratos/jvmgo/ch05/rtda"
 )
+
 // Divide double
 type DDIV struct{ base.NoOperandsInstruction }
 

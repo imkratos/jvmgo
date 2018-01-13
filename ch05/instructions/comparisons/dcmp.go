@@ -4,6 +4,7 @@ import (
 	"github.com/imkratos/jvmgo/ch05/instructions/base"
 	"github.com/imkratos/jvmgo/ch05/rtda"
 )
+
 // Compare double
 type DCMPG struct{ base.NoOperandsInstruction }
 

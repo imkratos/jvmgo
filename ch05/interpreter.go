@@ -1,11 +1,11 @@
 package main
 
 import (
-	"github.com/imkratos/jvmgo/ch05/classfile"
-	"github.com/imkratos/jvmgo/ch05/rtda"
 	"fmt"
+	"github.com/imkratos/jvmgo/ch05/classfile"
 	"github.com/imkratos/jvmgo/ch05/instructions"
 	"github.com/imkratos/jvmgo/ch05/instructions/base"
+	"github.com/imkratos/jvmgo/ch05/rtda"
 )
 
 func interpret(methodInfo *classfile.MemberInfo) {
@@ -13,6 +13,7 @@ func interpret(methodInfo *classfile.MemberInfo) {
 	maxLocals := codeAttr.MaxLocals()
 	maxStack := codeAttr.MaxStack()
 	bytecode := codeAttr.Code()
+	fmt.Printf("locals: %v , stack : %s \n", maxLocals, maxStack)
 
 	thread := rtda.NewThread()
 	frame := thread.NewFrame(maxLocals, maxStack)
@@ -32,11 +33,10 @@ func loop(thread *rtda.Thread, bytecode []byte) {
 
 		reader.Reset(bytecode, pc)
 		opcode := reader.ReadUint8()
-		fmt.Printf("opcode: %v: \n",opcode)
 		inst := instructions.NewInstruction(opcode)
 		inst.FetchOperands(reader)
 
-		fmt.Printf("pc:%2d inst:%T %v %v\n", pc, inst, inst,frame)
+		fmt.Printf("pc:%2d inst:%T %v %v\n", pc, inst, inst, frame)
 		inst.Execute(frame)
 	}
 
