@@ -2,6 +2,7 @@ package rtda
 
 import (
 	"math"
+	"github.com/imkratos/jvmgo/ch06/rtda/head"
 )
 
 type LocalVars []Slot
@@ -58,12 +59,12 @@ func (self LocalVars) GetDouble(index uint) float64 {
 
 }
 
-func (self LocalVars) SetRef(index uint, ref *Object) {
+func (self LocalVars) SetRef(index uint, ref *head.Object) {
 	self[index].ref = ref
 
 }
 
-func (self LocalVars) GetRef(index uint) *Object {
+func (self LocalVars) GetRef(index uint) *head.Object {
 	return self[index].ref
 
 }

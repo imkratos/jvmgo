@@ -2,6 +2,7 @@ package rtda
 
 import (
 	"math"
+	"github.com/imkratos/jvmgo/ch06/rtda/head"
 )
 
 type OperandStack struct {
@@ -73,13 +74,13 @@ func (self *OperandStack) PopDouble() float64 {
 
 }
 
-func (self *OperandStack) PushRef(ref *Object) {
+func (self *OperandStack) PushRef(ref *head.Object) {
 	self.slots[self.size].ref = ref
 	self.size++
 
 }
 
-func (self *OperandStack) PopRef() *Object {
+func (self *OperandStack) PopRef() *head.Object {
 	self.size--
 	ref := self.slots[self.size].ref
 	self.slots[self.size].ref = nil
