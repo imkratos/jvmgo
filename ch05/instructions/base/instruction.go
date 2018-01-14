@@ -33,7 +33,7 @@ func (self *Index8Instruction) FetchOperands(reader *BytecodeReader) {
 }
 
 func (self *BranchInstruction) FetchOperands(reader *BytecodeReader) {
-	self.Offset = int(reader.ReadUint16())
+	self.Offset = int(reader.ReadInt16())
 
 }
 
