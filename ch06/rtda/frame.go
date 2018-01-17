@@ -1,8 +1,10 @@
 package rtda
 
+import "jvmgo/ch06/rtda/heap"
+
 type Frame struct {
 	lower        *Frame
-	localVars    LocalVars
+	localVars    LocalVars // 局部变量
 	operandStack *OperandStack
 	thread       *Thread
 	nextPC       int
@@ -24,6 +26,10 @@ func (self *Frame) LocalVars() LocalVars {
 }
 func (self *Frame) OperandStack() *OperandStack {
 	return self.operandStack
+}
+
+func (self *Frame) Method() *heap.Method {
+	return self.method
 }
 
 func (self *Frame) Thread() *Thread {
