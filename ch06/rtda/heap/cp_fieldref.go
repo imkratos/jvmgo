@@ -1,4 +1,4 @@
-package head
+package heap
 
 import (
 	"github.com/imkratos/jvmgo/ch06/classfile"

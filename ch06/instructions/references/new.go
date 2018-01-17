@@ -3,7 +3,7 @@ package references
 import (
 	"github.com/imkratos/jvmgo/ch06/instructions/base"
 	"github.com/imkratos/jvmgo/ch06/rtda"
-	"github.com/imkratos/jvmgo/ch06/rtda/head"
+	"github.com/imkratos/jvmgo/ch06/rtda/heap"
 )
 
 type NEW struct {
@@ -12,7 +12,7 @@ type NEW struct {
 
 func (self *NEW) Execute(frame *rtda.Frame) {
 	cp := frame.Method().Class().ConstantPool()
-	classRef := cp.GetConstant(self.Index).(*head.ClassRef)
+	classRef := cp.GetConstant(self.Index).(*heap.ClassRef)
 	class := classRef.ResolvedClass()
 
 	if class.IsInterface() || class.IsAbstract() {

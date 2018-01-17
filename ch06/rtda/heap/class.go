@@ -1,4 +1,4 @@
-package head
+package heap
 
 import (
 	"github.com/imkratos/jvmgo/ch06/classfile"
@@ -27,7 +27,7 @@ func newClass(cf *classfile.ClassFile) *Class {
 	class.name = cf.ClassName()
 	class.superClassName = cf.SuperClassName()
 	class.interfaceNames = cf.InterfaceNames()
-	class.constantPool = newConstantPool()
+	class.constantPool = newConstantPool(class,cf.ConstantPool())
 	class.fields = newFields()
 	class.methods = newMethods()
 	return class

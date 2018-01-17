@@ -2,7 +2,7 @@ package rtda
 
 import (
 	"math"
-	"github.com/imkratos/jvmgo/ch06/rtda/head"
+	"github.com/imkratos/jvmgo/ch06/rtda/heap"
 )
 
 type LocalVars []Slot
@@ -59,12 +59,12 @@ func (self LocalVars) GetDouble(index uint) float64 {
 
 }
 
-func (self LocalVars) SetRef(index uint, ref *head.Object) {
+func (self LocalVars) SetRef(index uint, ref *heap.Object) {
 	self[index].ref = ref
 
 }
 
-func (self LocalVars) GetRef(index uint) *head.Object {
+func (self LocalVars) GetRef(index uint) *heap.Object {
 	return self[index].ref
 
 }
