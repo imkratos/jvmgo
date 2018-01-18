@@ -1,8 +1,8 @@
 package heap
 
 import (
-	"github.com/imkratos/jvmgo/ch06/classfile"
 	"fmt"
+	"github.com/imkratos/jvmgo/ch06/classfile"
 )
 
 type Constant interface {
@@ -13,7 +13,7 @@ type ConstantPool struct {
 	consts []Constant
 }
 
-func newConstantPool(class *Class, cfCp classfile.ConstantPool) {
+func newConstantPool(class *Class, cfCp classfile.ConstantPool) *ConstantPool {
 	cpCount := len(cfCp)
 	consts := make([]Constant, cpCount)
 	rtCp := &ConstantPool{class, consts}
@@ -54,6 +54,8 @@ func newConstantPool(class *Class, cfCp classfile.ConstantPool) {
 		}
 
 	}
+
+	return rtCp
 }
 
 func (self *ConstantPool) GetConstant(index uint) Constant {

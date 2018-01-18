@@ -1,9 +1,9 @@
 package heap
 
 import (
-	"github.com/imkratos/jvmgo/ch06/classpath"
 	"fmt"
 	"github.com/imkratos/jvmgo/ch06/classfile"
+	"github.com/imkratos/jvmgo/ch06/classpath"
 )
 
 type ClassLoader struct {
@@ -61,6 +61,7 @@ func initStaticFinalVar(class *Class, field *Field) {
 			vars.SetInt(slotId, val)
 		case "J":
 			val := cp.GetConstant(cpIndex).(int64)
+			vars.SetLong(slotId, val)
 		case "F":
 			val := cp.GetConstant(cpIndex).(float32)
 			vars.SetFloat(slotId, val)

@@ -10,6 +10,14 @@ type Field struct {
 	slotId          uint
 }
 
+func (self *Field) ConstValueIndex() uint {
+	return self.constValueIndex
+}
+
+func (self *Field) SlotId() uint {
+	return self.slotId
+}
+
 func newFields(class *Class, cfFields []*classfile.MemberInfo) []*Field {
 	fields := make([]*Field, len(cfFields))
 	for i, cfField := range cfFields {

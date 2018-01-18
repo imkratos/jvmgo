@@ -2,26 +2,19 @@ package main
 
 import (
 	"fmt"
-	"github.com/imkratos/jvmgo/ch06/classfile"
 	"github.com/imkratos/jvmgo/ch06/instructions"
 	"github.com/imkratos/jvmgo/ch06/instructions/base"
 	"github.com/imkratos/jvmgo/ch06/rtda"
+	"github.com/imkratos/jvmgo/ch06/rtda/heap"
 )
 
-func interpret(methodInfo *classfile.MemberInfo) {
-	codeAttr := methodInfo.CodeAttribute()
-	maxLocals := codeAttr.MaxLocals()
-	maxStack := codeAttr.MaxStack()
-	bytecode := codeAttr.Code()
-	fmt.Printf("locals: %v , stack : %s \n", maxLocals, maxStack)
-
+func interpret(method *heap.Method) {
 	thread := rtda.NewThread()
-	frame := thread.NewFrame(maxLocals, maxStack)
+	frame := thread.NewFrame(method)
 	thread.PushFrame(frame)
 
 	defer catchErr(frame)
-
-	loop(thread, bytecode)
+	loop(thread, method.Code())
 
 }
 func loop(thread *rtda.Thread, bytecode []byte) {

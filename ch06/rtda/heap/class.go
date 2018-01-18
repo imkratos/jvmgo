@@ -10,7 +10,7 @@ type Class struct {
 	name              string
 	superClassName    string
 	interfaceNames    []string
-	constantPool      *classfile.ConstantPool
+	constantPool      *ConstantPool
 	fields            []*Field
 	methods           []*Method
 	loader            *ClassLoader
@@ -18,7 +18,7 @@ type Class struct {
 	interfaces        []*Class
 	instanceSlotCount uint
 	staticSlotCount   uint
-	staticVars        *Slots
+	staticVars        Slots
 }
 
 func newClass(cf *classfile.ClassFile) *Class {
@@ -27,9 +27,9 @@ func newClass(cf *classfile.ClassFile) *Class {
 	class.name = cf.ClassName()
 	class.superClassName = cf.SuperClassName()
 	class.interfaceNames = cf.InterfaceNames()
-	class.constantPool = newConstantPool(class,cf.ConstantPool())
-	class.fields = newFields()
-	class.methods = newMethods()
+	class.constantPool = newConstantPool(class, cf.ConstantPool())
+	class.fields = newFields(class, cf.Fields())
+	class.methods = newMethods(class, cf.Methods())
 	return class
 }
 
@@ -59,7 +59,7 @@ func (self *Class) IsEnum() bool {
 }
 
 // getters
-func (self *Class) ConstantPool() *classfile.ConstantPool {
+func (self *Class) ConstantPool() *ConstantPool {
 	return self.constantPool
 }
 func (self *Class) StaticVars() Slots {
@@ -88,7 +88,6 @@ func (self *Class) getStaticMethod(name, descriptor string) *Method {
 		if method.IsStatic() &&
 			method.name == name &&
 			method.descriptor == descriptor {
-
 			return method
 		}
 	}

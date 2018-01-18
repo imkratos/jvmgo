@@ -5,7 +5,6 @@ type BytecodeReader struct {
 	pc   int
 }
 
-
 func (self *BytecodeReader) PC() int {
 	return self.pc
 }

@@ -1,8 +1,8 @@
 package rtda
 
 import (
-	"math"
 	"github.com/imkratos/jvmgo/ch06/rtda/heap"
+	"math"
 )
 
 type OperandStack struct {
