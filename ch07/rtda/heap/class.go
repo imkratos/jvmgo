@@ -1,7 +1,7 @@
 package heap
 
 import (
-	"github.com/imkratos/jvmgo/ch06/classfile"
+	"github.com/imkratos/jvmgo/ch07/classfile"
 	"strings"
 )
 
@@ -69,10 +69,10 @@ func (self *Class) StaticVars() Slots {
 // jvms 5.4.4
 func (self *Class) isAccessibleTo(other *Class) bool {
 	return self.IsPublic() ||
-		self.getPackageName() == other.getPackageName()
+		self.GetPackageName() == other.GetPackageName()
 }
 
-func (self *Class) getPackageName() string {
+func (self *Class) GetPackageName() string {
 	if i := strings.LastIndex(self.name, "/"); i >= 0 {
 		return self.name[:i]
 	}
@@ -96,4 +96,8 @@ func (self *Class) getStaticMethod(name, descriptor string) *Method {
 
 func (self *Class) NewObject() *Object {
 	return newObject(self)
+}
+
+func (self *Class) SuperClass() *Class {
+	return self.superClass
 }

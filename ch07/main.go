@@ -2,9 +2,9 @@ package main
 
 import "fmt"
 import (
-	"github.com/imkratos/jvmgo/ch06/classpath"
+	"github.com/imkratos/jvmgo/ch07/classpath"
 	"strings"
-	"github.com/imkratos/jvmgo/ch06/rtda/heap"
+	"github.com/imkratos/jvmgo/ch07/rtda/heap"
 )
 
 func main() {

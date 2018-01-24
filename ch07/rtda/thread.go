@@ -1,6 +1,6 @@
 package rtda
 
-import "github.com/imkratos/jvmgo/ch06/rtda/heap"
+import "github.com/imkratos/jvmgo/ch07/rtda/heap"
 
 type Thread struct {
 	pc    int
@@ -37,4 +37,8 @@ func (self *Thread) CurrentFrame(frame *Frame) {
 
 func (self *Thread) NewFrame(method *heap.Method) *Frame {
 	return newFrame(self, method)
+}
+
+func (self *Thread) TopFrame() *Frame {
+	return self.stack.top()
 }

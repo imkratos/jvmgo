@@ -1,6 +1,6 @@
 package heap
 
-import "github.com/imkratos/jvmgo/ch06/classfile"
+import "github.com/imkratos/jvmgo/ch07/classfile"
 
 type ClassMember struct {
 	accessFlags uint16
@@ -52,11 +52,11 @@ func (self *ClassMember) isAccessibleTo(d *Class) bool {
 	}
 	c := self.class
 	if self.IsProtected() {
-		return d == c || d.isSubClassOf(c) ||
-			c.getPackageName() == d.getPackageName()
+		return d == c || d.IsSubClassOf(c) ||
+			c.GetPackageName() == d.GetPackageName()
 	}
 	if !self.IsPrivate() {
-		return c.getPackageName() == d.getPackageName()
+		return c.GetPackageName() == d.GetPackageName()
 	}
 	return d == c
 }

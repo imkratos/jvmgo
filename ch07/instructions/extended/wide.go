@@ -1,10 +1,10 @@
 package extended
 
 import (
-	"github.com/imkratos/jvmgo/ch06/instructions/base"
-	"github.com/imkratos/jvmgo/ch06/instructions/loads"
-	"github.com/imkratos/jvmgo/ch06/instructions/math"
-	"github.com/imkratos/jvmgo/ch06/rtda"
+	"github.com/imkratos/jvmgo/ch07/instructions/base"
+	"github.com/imkratos/jvmgo/ch07/instructions/loads"
+	"github.com/imkratos/jvmgo/ch07/instructions/math"
+	"github.com/imkratos/jvmgo/ch07/rtda"
 )
 
 type WIDE struct {

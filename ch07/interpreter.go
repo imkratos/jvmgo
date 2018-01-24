@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/imkratos/jvmgo/ch06/instructions"
-	"github.com/imkratos/jvmgo/ch06/instructions/base"
-	"github.com/imkratos/jvmgo/ch06/rtda"
-	"github.com/imkratos/jvmgo/ch06/rtda/heap"
+	"github.com/imkratos/jvmgo/ch07/instructions"
+	"github.com/imkratos/jvmgo/ch07/instructions/base"
+	"github.com/imkratos/jvmgo/ch07/rtda"
+	"github.com/imkratos/jvmgo/ch07/rtda/heap"
 )
 
 func interpret(method *heap.Method) {

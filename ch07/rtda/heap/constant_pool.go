@@ -2,7 +2,7 @@ package heap
 
 import (
 	"fmt"
-	"github.com/imkratos/jvmgo/ch06/classfile"
+	"github.com/imkratos/jvmgo/ch07/classfile"
 )
 
 type Constant interface {

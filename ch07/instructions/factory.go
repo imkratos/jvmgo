@@ -2,18 +2,18 @@ package instructions
 
 import (
 	"fmt"
-	"github.com/imkratos/jvmgo/ch06/instructions/base"
+	"github.com/imkratos/jvmgo/ch07/instructions/base"
 )
-import . "github.com/imkratos/jvmgo/ch06/instructions/constants"
-import . "github.com/imkratos/jvmgo/ch06/instructions/comparisons"
-import . "github.com/imkratos/jvmgo/ch06/instructions/control"
-import . "github.com/imkratos/jvmgo/ch06/instructions/conversions"
-import . "github.com/imkratos/jvmgo/ch06/instructions/extended"
-import . "github.com/imkratos/jvmgo/ch06/instructions/loads"
-import . "github.com/imkratos/jvmgo/ch06/instructions/math"
-import . "github.com/imkratos/jvmgo/ch06/instructions/stack"
-import . "github.com/imkratos/jvmgo/ch06/instructions/stores"
-import . "github.com/imkratos/jvmgo/ch06/instructions/references"
+import . "github.com/imkratos/jvmgo/ch07/instructions/constants"
+import . "github.com/imkratos/jvmgo/ch07/instructions/comparisons"
+import . "github.com/imkratos/jvmgo/ch07/instructions/control"
+import . "github.com/imkratos/jvmgo/ch07/instructions/conversions"
+import . "github.com/imkratos/jvmgo/ch07/instructions/extended"
+import . "github.com/imkratos/jvmgo/ch07/instructions/loads"
+import . "github.com/imkratos/jvmgo/ch07/instructions/math"
+import . "github.com/imkratos/jvmgo/ch07/instructions/stack"
+import . "github.com/imkratos/jvmgo/ch07/instructions/stores"
+import . "github.com/imkratos/jvmgo/ch07/instructions/references"
 
 var (
 	nop         = &NOP{}

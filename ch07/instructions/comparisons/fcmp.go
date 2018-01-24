@@ -1,7 +1,7 @@
 package comparisons
 
-import "github.com/imkratos/jvmgo/ch06/instructions/base"
-import "github.com/imkratos/jvmgo/ch06/rtda"
+import "github.com/imkratos/jvmgo/ch07/instructions/base"
+import "github.com/imkratos/jvmgo/ch07/rtda"
 
 // Compare float
 type FCMPG struct{ base.NoOperandsInstruction }

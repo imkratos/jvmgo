@@ -2,8 +2,8 @@ package heap
 
 import (
 	"fmt"
-	"github.com/imkratos/jvmgo/ch06/classfile"
-	"github.com/imkratos/jvmgo/ch06/classpath"
+	"github.com/imkratos/jvmgo/ch07/classfile"
+	"github.com/imkratos/jvmgo/ch07/classpath"
 )
 
 type ClassLoader struct {

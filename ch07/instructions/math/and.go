@@ -1,8 +1,8 @@
 package math
 
 import (
-	"github.com/imkratos/jvmgo/ch06/instructions/base"
-	"github.com/imkratos/jvmgo/ch06/rtda"
+	"github.com/imkratos/jvmgo/ch07/instructions/base"
+	"github.com/imkratos/jvmgo/ch07/rtda"
 )
 
 type IAND struct {

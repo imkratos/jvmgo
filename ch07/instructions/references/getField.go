@@ -1,9 +1,9 @@
 package references
 
 import (
-	"github.com/imkratos/jvmgo/ch06/instructions/base"
-	"github.com/imkratos/jvmgo/ch06/rtda"
-	"github.com/imkratos/jvmgo/ch06/rtda/heap"
+	"github.com/imkratos/jvmgo/ch07/instructions/base"
+	"github.com/imkratos/jvmgo/ch07/rtda"
+	"github.com/imkratos/jvmgo/ch07/rtda/heap"
 )
 
 type GET_FIELD struct {

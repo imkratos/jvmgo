@@ -1,7 +1,7 @@
 package heap
 
 import (
-	"github.com/imkratos/jvmgo/ch06/classfile"
+	"github.com/imkratos/jvmgo/ch07/classfile"
 )
 
 type Field struct {

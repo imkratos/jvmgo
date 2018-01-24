@@ -1,7 +1,7 @@
 package rtda
 
 import (
-	"github.com/imkratos/jvmgo/ch06/rtda/heap"
+	"github.com/imkratos/jvmgo/ch07/rtda/heap"
 	"math"
 )
 
@@ -67,4 +67,8 @@ func (self LocalVars) SetRef(index uint, ref *heap.Object) {
 func (self LocalVars) GetRef(index uint) *heap.Object {
 	return self[index].ref
 
+}
+
+func (self LocalVars) SetSlot(index uint, slot Slot) {
+	self[index] = slot
 }

@@ -1,6 +1,6 @@
 package heap
 
-import "github.com/imkratos/jvmgo/ch06/classfile"
+import "github.com/imkratos/jvmgo/ch07/classfile"
 
 type MemberRef struct {
 	SymRef

@@ -1,12 +1,13 @@
 package heap
 
-import "github.com/imkratos/jvmgo/ch06/classfile"
+import "github.com/imkratos/jvmgo/ch07/classfile"
 
 type Method struct {
 	ClassMember
-	maxStack  uint
-	maxLocals uint
-	code      []byte
+	maxStack     uint
+	maxLocals    uint
+	code         []byte
+	argSlotCount uint
 }
 
 func (self *Method) copyAttributes(cfMethod *classfile.MemberInfo) {
@@ -24,6 +25,7 @@ func newMethods(class *Class, cfMethods []*classfile.MemberInfo) []*Method {
 		methods[i].class = class
 		methods[i].copyMemberInfo(cfMethod)
 		methods[i].copyAttributes(cfMethod)
+		methods[i].calcArgSlotCount()
 
 	}
 	return methods
@@ -57,4 +59,21 @@ func (self *Method) MaxLocals() uint {
 }
 func (self *Method) Code() []byte {
 	return self.code
+}
+
+func (self *Method) ArgSlotCount() uint {
+	return self.argSlotCount
+}
+func (self *Method) calcArgSlotCount() {
+	parsedDescriptor := parseMethodDescriptor(self.descriptor)
+	for _, paramType := range parsedDescriptor.parameterTypes {
+		self.argSlotCount ++
+		if paramType == "J" || paramType == "D" {
+			self.argSlotCount++
+		}
+
+	}
+	if !self.IsStatic() {
+		self.argSlotCount++
+	}
 }
