@@ -118,3 +118,38 @@ func (self *Class) Name() string {
 func (self *Class) GetClinitMethod() *Method {
 	return self.getStaticMethod("<clinit>", "()V")
 }
+func (self *Class) Loader() *ClassLoader {
+	return self.loader
+}
+
+func (self *Class) ArrayClass() *Class {
+	arrayClassName := getArrayClassName(self.name)
+	return self.loader.LoadClass(arrayClassName)
+}
+
+func (self *Class) ComponentClass() *Class {
+	componentClassName := getComponentClassName(self.name)
+	return self.loader.LoadClass(componentClassName)
+}
+
+func (self *Class) isJlObject() bool {
+	return self.name == "java/lang/Object"
+}
+func (self *Class) isJlCloneable() bool {
+	return self.name == "java/lang/Cloneable"
+}
+func (self *Class) isJioSerializable() bool {
+	return self.name == "java/io/Serializable"
+}
+
+func (self *Class) getField(name, descriptor string, isStatic bool) *Field {
+	for c := self; c != nil; c = c.superClass {
+		for _, field := range c.fields {
+			if field.IsStatic() == isStatic &&
+				field.name == name && field.descriptor == descriptor {
+				return field
+			}
+		}
+	}
+	return nil
+}
