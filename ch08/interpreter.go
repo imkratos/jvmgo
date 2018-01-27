@@ -13,7 +13,7 @@ func interpret(method *heap.Method, logInst bool) {
 	frame := thread.NewFrame(method)
 	thread.PushFrame(frame)
 
-	defer catchErr(frame)
+	defer catchErr(thread)
 	loop(thread, logInst)
 
 }
@@ -47,7 +47,7 @@ func logInstruction(frame *rtda.Frame, ins base.Instruction) {
 	className := method.Class().Name()
 	methodName := method.Name()
 	pc := frame.Thread().PC()
-	fmt.Printf("%v.%v() #%2d %T %v \n", className, methodName, pc, inst, inst)
+	fmt.Printf("%v.%v() #%2d   \n", className, methodName, pc)
 }
 func catchErr(thread *rtda.Thread) {
 	if r := recover(); r != nil {

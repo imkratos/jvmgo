@@ -15,7 +15,7 @@ func (self *Class) isAssignableFrom(other *Class) bool {
 			}
 		} else {
 			if !t.IsInterface() {
-				return t.isJlobject()
+				return t.isJlObject()
 			} else {
 				return t.isSuperInterfaceOf(s)
 			}
@@ -47,16 +47,16 @@ func (self *Class) IsSubClassOf(other *Class) bool {
 func (self *Class) IsImplements(iface *Class) bool {
 	for c := self; c != nil; c = c.superClass {
 		for _, i := range c.interfaces {
-			if i == iface || i.IsSubInterfaceOf(iface) {
+			if i == iface || i.isSubInterfaceOf(iface) {
 				return true
 			}
 		}
 	}
 	return false
 }
-func (self *Class) IsSubInterfaceOf(iface *Class) bool {
+func (self *Class) isSubInterfaceOf(iface *Class) bool {
 	for _, superInterface := range self.interfaces {
-		if superInterface == iface || superInterface.IsSubInterfaceOf(iface) {
+		if superInterface == iface || superInterface.isSubInterfaceOf(iface) {
 			return true
 		}
 	}
@@ -66,4 +66,9 @@ func (self *Class) IsSubInterfaceOf(iface *Class) bool {
 // c extends self
 func (self *Class) IsSuperClassOf(other *Class) bool {
 	return other.IsSubClassOf(self)
+}
+
+// iface extends self
+func (self *Class) isSuperInterfaceOf(iface *Class) bool {
+	return iface.isSubInterfaceOf(self)
 }

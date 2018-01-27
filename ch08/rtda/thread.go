@@ -31,7 +31,7 @@ func (self *Thread) PopFrame() *Frame {
 
 }
 func (self *Thread) CurrentFrame() *Frame {
-	self.stack.top()
+	return self.stack.top()
 
 }
 
