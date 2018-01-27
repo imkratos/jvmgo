@@ -3,6 +3,7 @@ package constants
 import (
 	"github.com/imkratos/jvmgo/ch08/instructions/base"
 	"github.com/imkratos/jvmgo/ch08/rtda"
+	"github.com/imkratos/jvmgo/ch08/rtda/heap"
 )
 
 type LDC struct {
@@ -27,8 +28,8 @@ func (self *LDC_W) Execute(frame *rtda.Frame) {
 
 func _ldc(frame *rtda.Frame, index uint) {
 	stack := frame.OperandStack()
-	cp := frame.Method().Class().ConstantPool()
-	c := cp.GetConstant(index)
+	class := frame.Method().Class()
+	c := class.ConstantPool().GetConstant(index)
 
 	switch c.(type) {
 	case int32:
@@ -36,7 +37,9 @@ func _ldc(frame *rtda.Frame, index uint) {
 	case float32:
 		stack.PushFloat(c.(float32))
 
-		//case string:
+	case string:
+		internedStr := heap.JString(class.Loader(), c.(string))
+		stack.PushRef(internedStr)
 		//case *heap.ClassRef
 	default:
 		panic("todo: ldc!")
