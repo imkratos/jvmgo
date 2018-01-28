@@ -102,10 +102,10 @@ func (self *Class) GetPackageName() string {
 }
 
 func (self *Class) GetMainMethod() *Method {
-	return self.getStaticMethod("main", "([Ljava/lang/String;)V")
+	return self.GetStaticMethod("main", "([Ljava/lang/String;)V")
 }
 
-func (self *Class) getStaticMethod(name, descriptor string) *Method {
+func (self *Class) GetStaticMethod(name, descriptor string) *Method {
 	for _, method := range self.methods {
 		if method.IsStatic() &&
 			method.name == name &&
