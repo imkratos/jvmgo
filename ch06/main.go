@@ -3,8 +3,8 @@ package main
 import "fmt"
 import (
 	"github.com/imkratos/jvmgo/ch06/classpath"
-	"strings"
 	"github.com/imkratos/jvmgo/ch06/rtda/heap"
+	"strings"
 )
 
 func main() {

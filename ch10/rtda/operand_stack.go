@@ -21,6 +21,13 @@ func newOperandStack(maxStack uint) *OperandStack {
 
 }
 
+func (self *OperandStack) Clear() {
+	self.size = 0
+	for i := range self.slots {
+		self.slots[i].ref = nil
+	}
+}
+
 func (self *OperandStack) PushInt(val int32) {
 	self.slots[self.size].num = val
 	self.size++

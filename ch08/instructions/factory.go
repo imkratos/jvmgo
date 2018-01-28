@@ -526,22 +526,22 @@ func NewInstruction(opcode byte) base.Instruction {
 		// 	return _return
 		//	case 0xb2:
 		//		return &GET_STATIC{}
-		 case 0xb3:
-		 	return &PUT_STATIC{}
-		 case 0xb4:
-		 	return &GET_FIELD{}
-		 case 0xb5:
-		 	return &PUT_FIELD{}
-			case 0xb6:
-				return &INVOKE_VIRTUAL{}
-		 case 0xb7:
-		 	return &INVOKE_SPECIAL{}
-		 case 0xb8:
-		 	return &INVOKE_STATIC{}
-		 //case 0xb9:
-		 //	return &INVOKE_INTERFACE{}
-		 //case 0xba:
-		 //	return &INVOKE_DYNAMIC{}
+	case 0xb3:
+		return &PUT_STATIC{}
+	case 0xb4:
+		return &GET_FIELD{}
+	case 0xb5:
+		return &PUT_FIELD{}
+	case 0xb6:
+		return &INVOKE_VIRTUAL{}
+	case 0xb7:
+		return &INVOKE_SPECIAL{}
+	case 0xb8:
+		return &INVOKE_STATIC{}
+		//case 0xb9:
+		//	return &INVOKE_INTERFACE{}
+		//case 0xba:
+		//	return &INVOKE_DYNAMIC{}
 	case 0xbb:
 		return &NEW{}
 		// case 0xbc:
@@ -570,8 +570,8 @@ func NewInstruction(opcode byte) base.Instruction {
 		return &IFNONNULL{}
 	case 0xc8:
 		return &GOTO_W{}
-		 //case 0xc9:
-		 //	return &JSR_W{}
+		//case 0xc9:
+		//	return &JSR_W{}
 		// case 0xca: breakpoint
 		// case 0xfe: impdep1
 		// case 0xff: impdep2

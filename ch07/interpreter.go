@@ -1,11 +1,11 @@
 package main
 
 import (
+	"fmt"
 	"github.com/imkratos/jvmgo/ch07/instructions"
 	"github.com/imkratos/jvmgo/ch07/instructions/base"
 	"github.com/imkratos/jvmgo/ch07/rtda"
 	"github.com/imkratos/jvmgo/ch07/rtda/heap"
-	"fmt"
 )
 
 func interpret(method *heap.Method, logInst bool) {
@@ -30,7 +30,7 @@ func loop(thread *rtda.Thread, logInst bool) {
 		inst.FetchOperands(reader)
 		frame.SetNextPC(reader.PC())
 
-		if (logInst) {
+		if logInst {
 			logInstruction(frame, inst)
 		}
 

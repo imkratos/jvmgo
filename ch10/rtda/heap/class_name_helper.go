@@ -41,7 +41,7 @@ func toClassName(descriptor string) string {
 	}
 
 	if descriptor[0] == 'L' {
-		return descriptor[1:len(descriptor)-1]
+		return descriptor[1 : len(descriptor)-1]
 	}
 
 	for className, d := range primitiveTypes {

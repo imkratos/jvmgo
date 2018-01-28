@@ -2,8 +2,8 @@ package reserved
 
 import (
 	"github.com/imkratos/jvmgo/ch10/instructions/base"
-	"github.com/imkratos/jvmgo/ch10/rtda"
 	"github.com/imkratos/jvmgo/ch10/native"
+	"github.com/imkratos/jvmgo/ch10/rtda"
 )
 import _ "github.com/imkratos/jvmgo/ch10/native/lang"
 import _ "github.com/imkratos/jvmgo/ch10/native/sun/misc"

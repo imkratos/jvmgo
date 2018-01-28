@@ -76,7 +76,7 @@ func (self *Method) ArgSlotCount() uint {
 }
 func (self *Method) calcArgSlotCount(paramTypes []string) {
 	for _, paramType := range paramTypes {
-		self.argSlotCount ++
+		self.argSlotCount++
 		if paramType == "J" || paramType == "D" {
 			self.argSlotCount++
 		}

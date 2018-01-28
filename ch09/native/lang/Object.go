@@ -1,9 +1,9 @@
 package lang
 
 import (
-	"unsafe"
 	"github.com/imkratos/jvmgo/ch09/native"
 	"github.com/imkratos/jvmgo/ch09/rtda"
+	"unsafe"
 )
 
 func init() {

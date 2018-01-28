@@ -1,10 +1,10 @@
 package references
 
 import (
+	"fmt"
 	"github.com/imkratos/jvmgo/ch07/instructions/base"
 	"github.com/imkratos/jvmgo/ch07/rtda"
 	"github.com/imkratos/jvmgo/ch07/rtda/heap"
-	"fmt"
 )
 
 // Invoke instance method; dispatch based on class

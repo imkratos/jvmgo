@@ -1,9 +1,9 @@
 package base
 
 import (
+	"fmt"
 	"github.com/imkratos/jvmgo/ch07/rtda"
 	"github.com/imkratos/jvmgo/ch07/rtda/heap"
-	"fmt"
 )
 
 func InvokeMethod(invokerFrame *rtda.Frame, method *heap.Method) {

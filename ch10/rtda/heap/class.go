@@ -21,6 +21,7 @@ type Class struct {
 	staticVars        Slots
 	initStarted       bool
 	jClass            *Object
+	sourceFile        string
 }
 
 func newClass(cf *classfile.ClassFile) *Class {
@@ -32,7 +33,18 @@ func newClass(cf *classfile.ClassFile) *Class {
 	class.constantPool = newConstantPool(class, cf.ConstantPool())
 	class.fields = newFields(class, cf.Fields())
 	class.methods = newMethods(class, cf.Methods())
+	class.sourceFile = getSourceFile(cf)
 	return class
+}
+func getSourceFile(cf *classfile.ClassFile) string {
+	if sfASttr := cf.SourceFileAttribute(); sfASttr != nil {
+		return sfASttr.FileName()
+	}
+	return "Unknown"
+}
+
+func (self *Class) SourceFile() string {
+	return self.sourceFile
 }
 
 func (self *Class) IsPublic() bool {

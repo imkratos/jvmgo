@@ -1,8 +1,6 @@
 package heap
 
 type MethodDescriptor struct {
-	parameterTypes [] string
+	parameterTypes []string
 	returnType     string
 }
-
-

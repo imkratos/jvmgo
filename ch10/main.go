@@ -3,8 +3,8 @@ package main
 import "fmt"
 import (
 	"github.com/imkratos/jvmgo/ch10/classpath"
-	"strings"
 	"github.com/imkratos/jvmgo/ch10/rtda/heap"
+	"strings"
 )
 
 func main() {
@@ -27,7 +27,7 @@ func startJvm(cmd *Cmd) {
 	mainMethod := mainClass.GetMainMethod()
 
 	if mainMethod != nil {
-		interpret(mainMethod, cmd.verboseClassFlag,cmd.args)
+		interpret(mainMethod, cmd.verboseClassFlag, cmd.args)
 	} else {
 		fmt.Printf("Main method not found in class %s \n", cmd.class)
 	}

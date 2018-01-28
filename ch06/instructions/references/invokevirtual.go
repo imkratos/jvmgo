@@ -1,9 +1,9 @@
 package references
 
 import (
+	"fmt"
 	"github.com/imkratos/jvmgo/ch06/instructions/base"
 	"github.com/imkratos/jvmgo/ch06/rtda"
-	"fmt"
 	"github.com/imkratos/jvmgo/ch06/rtda/heap"
 )
 

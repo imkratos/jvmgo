@@ -1,10 +1,9 @@
 package heap
 
 type MethodDescriptor struct {
-	parameterTypes [] string
+	parameterTypes []string
 	returnType     string
 }
-
 
 func (self *MethodDescriptor) addParameterType(t string) {
 	pLen := len(self.parameterTypes)

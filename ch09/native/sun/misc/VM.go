@@ -1,10 +1,10 @@
 package misc
 
 import (
+	"github.com/imkratos/jvmgo/ch09/instructions/base"
 	"github.com/imkratos/jvmgo/ch09/native"
 	"github.com/imkratos/jvmgo/ch09/rtda"
 	"github.com/imkratos/jvmgo/ch09/rtda/heap"
-	"github.com/imkratos/jvmgo/ch09/instructions/base"
 )
 
 func init() {

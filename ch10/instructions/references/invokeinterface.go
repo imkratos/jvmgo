@@ -1,9 +1,9 @@
 package references
 
 import (
+	"github.com/imkratos/jvmgo/ch10/instructions/base"
 	"github.com/imkratos/jvmgo/ch10/rtda"
 	"github.com/imkratos/jvmgo/ch10/rtda/heap"
-	"github.com/imkratos/jvmgo/ch10/instructions/base"
 )
 
 type INVOKE_INTERFACE struct {

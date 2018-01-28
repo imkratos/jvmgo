@@ -12,6 +12,12 @@ func newStack(maxSize uint) *Stack {
 	}
 }
 
+func (self *Stack) clear() {
+	for !self.isEmpty() {
+		self.pop()
+	}
+}
+
 func (self *Stack) push(frame *Frame) {
 	if self.size >= self.maxSize {
 		panic("java.lang.StackOverflowError")
@@ -47,4 +53,12 @@ func (self *Stack) top() *Frame {
 
 func (self *Stack) isEmpty() bool {
 	return self._top == nil
+}
+
+func (self *Stack) getFrames() []*Frame {
+	frames := make([]*Frame, 0, self.size)
+	for frame := self._top; frame != nil; frame = frame.lower {
+		frames = append(frames, frame)
+	}
+	return frames
 }
