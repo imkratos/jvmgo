@@ -20,6 +20,7 @@ type Class struct {
 	staticSlotCount   uint
 	staticVars        Slots
 	initStarted       bool
+	jClass            *Object
 }
 
 func newClass(cf *classfile.ClassFile) *Class {
@@ -113,6 +114,10 @@ func (self *Class) SuperClass() *Class {
 
 func (self *Class) Name() string {
 	return self.name
+}
+
+func (self *Class) JClass() *Object {
+	return self.jClass
 }
 
 func (self *Class) GetClinitMethod() *Method {
