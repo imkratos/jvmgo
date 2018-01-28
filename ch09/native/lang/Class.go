@@ -16,7 +16,7 @@ func init() {
 
 }
 
-func getPrimitiveClass(frame rtda.Frame) {
+func getPrimitiveClass(frame *rtda.Frame) {
 	nameObj := frame.LocalVars().GetRef(0)
 	name := heap.GoString(nameObj)
 
@@ -24,4 +24,19 @@ func getPrimitiveClass(frame rtda.Frame) {
 	class := loader.LoadClass(name).JClass()
 
 	frame.OperandStack().PushRef(class)
+}
+
+func getName0(frame *rtda.Frame) {
+	this := frame.LocalVars().GetThis()
+	class := this.Extra().(*heap.Class)
+
+	name := class.JavaName()
+	nameObj := heap.JString(class.Loader(), name)
+
+	frame.OperandStack().PushRef(nameObj)
+
+}
+
+func desiredAssertionStatus0(frame *rtda.Frame) {
+	frame.OperandStack().PushBoolean(false)
 }

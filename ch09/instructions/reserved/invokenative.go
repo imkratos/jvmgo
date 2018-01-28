@@ -5,6 +5,8 @@ import (
 	"github.com/imkratos/jvmgo/ch09/rtda"
 	"github.com/imkratos/jvmgo/ch09/native"
 )
+import _ "github.com/imkratos/jvmgo/ch09/native/lang"
+import _ "github.com/imkratos/jvmgo/ch09/native/sun/misc"
 
 type INVOKE_NATIVE struct {
 	base.NoOperandsInstruction
